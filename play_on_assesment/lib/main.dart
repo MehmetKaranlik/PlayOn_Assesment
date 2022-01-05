@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:play_on_assesment/core/init/cache/locale_manager.dart';
 import 'package:play_on_assesment/view/teams/controller/teams_view_controller.dart';
 import 'package:play_on_assesment/view/teams/view/teams_view.dart';
 import 'package:provider/provider.dart';
@@ -30,13 +29,13 @@ class MyApp extends StatelessWidget {
 }
 
 void asyncInit() async {
- // await LocaleManager.prefrencesInit();
+  // await LocaleManager.prefrencesInit();
 }
 
 initProvider() {
   return MultiProvider(
     providers: [
-      Provider(
+      ChangeNotifierProvider(
         create: (context) => TeamsViewController(),
       )
     ],
