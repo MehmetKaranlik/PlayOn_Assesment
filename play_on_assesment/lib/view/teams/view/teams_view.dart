@@ -23,19 +23,26 @@ class _TeamsViewState extends State<TeamsView> {
         backgroundColor: Color(0xff242C35),
         body: Stack(
           children: [
-            Column(
-              children: [
-                Spacer(),
-                SvgPicture.asset(
-                  SvgConstants.instance.appLogo,
-                  width: 15.w,
-                ),
-                DynamicVerticalSpace()
-              ],
-            ),
             _buildUpperStack(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [const Spacer(), _buildBottomLogo(), DynamicVerticalSpace()],
+            ),
           ],
         ));
+  }
+
+  Row _buildBottomLogo() {
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          SvgConstants.instance.appLogo,
+          width: 15.w,
+        ),
+      ],
+    );
   }
 
   Column _buildUpperStack() {
@@ -68,7 +75,7 @@ class _TeamsViewState extends State<TeamsView> {
                 "Team name",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 5.w,
+                  fontSize: 3.h,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -97,7 +104,7 @@ class _TeamsViewState extends State<TeamsView> {
             "T1",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 5.w,
+              fontSize: 3.h,
               fontWeight: FontWeight.bold,
             ),
           ),
